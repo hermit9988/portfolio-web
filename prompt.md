@@ -47,3 +47,6 @@ Before implementation, briefly state:
 - The chosen abstract form and why it complements the existing design
 
 Then implement the complete result. Do not redesign the rest of the portfolio.
+
+## Sync github
+commit and sync in batches
