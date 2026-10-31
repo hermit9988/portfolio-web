@@ -6,7 +6,7 @@ Here is a complete, structured text layout and wireframe copy for your personal 
 
 *Layout: Sticky top bar, clean and minimal.*
 
-* **Left (Brand/Logo):** **Ôn Thượng Vĩ** (Wen Shang Weei) | *Educator & Academic Specialist*
+* **Left (Brand/Logo):** **Ôn Thượng Vĩ**  | Educator
 
 
 * **Center (Navigation Links):**
@@ -18,7 +18,7 @@ Here is a complete, structured text layout and wireframe copy for your personal 
 
 
 * **Right (Language & CTA):**
-* Language Toggle: `EN | VI | 中文` *(Highlighting your trilingual capability)*
+* Language Toggle: `EN | VI | 中文` 
 
 
 * Primary Button: **[Book a Consultation]**

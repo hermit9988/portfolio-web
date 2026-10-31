@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tuan Nguyen · Computational Biologist</title>
+<title>Ôn Thượng Vĩ (Wen Shang Weei) · Educator & Academic Specialist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap">
 <style>
-/* ===== Theme CSS (styles.css) ===== */
+/* ===== Theme CSS ===== */
 @charset "utf-8";
 
 :root {
@@ -64,7 +64,8 @@ figcaption { font-size: 11px; margin-top: var(--space-1); color: color-mix(in sr
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 ::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
 .hr { height: 2px; border: 0px; margin: var(--space-4) 0; background: var(--color-divider); }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; text-decoration: none; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 14px; line-height: 1.2; color: var(--color-text); background: transparent; border: 1px solid transparent; padding: var(--space-2) calc(var(--space-3) * 1.2); border-radius: var(--radius-md); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; text-decoration: none; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 14px; line-height: 1.2; color: var(--color-text); background: transparent; border: 1px solid transparent; padding: var(--space-2) calc(var(--space-3) * 1.2); border-radius: var(--radius-md); transition: all 0.2s ease; }
 .btn svg { display: block; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
 .btn-primary { background: var(--color-accent); color: var(--color-bg); }
@@ -78,53 +79,34 @@ figcaption { font-size: 11px; margin-top: var(--space-1); color: color-mix(in sr
 .btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
 .btn-icon { width: 36px; height: 36px; padding: 0px; }
 .btn-block { width: 100%; margin-top: var(--space-2); justify-content: flex-start; text-align: left; }
-.field > label { display: block; font-size: 12px; margin-bottom: 5px; color: color-mix(in srgb, var(--color-text) 70%, transparent); }
-.input { width: 100%; min-height: 36px; padding: 6px 10px; font-size: 14px; color: var(--color-text); caret-color: var(--color-accent); background: var(--color-surface); border: 1px solid var(--color-divider); border-radius: var(--radius-md); font-family: inherit; line-height: inherit; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field > label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: color-mix(in srgb, var(--color-text) 70%, transparent); }
+.input { width: 100%; min-height: 40px; padding: 8px 12px; font-size: 14px; color: var(--color-text); caret-color: var(--color-accent); background: var(--color-surface); border: 1px solid var(--color-divider); border-radius: var(--radius-md); font-family: inherit; line-height: inherit; box-sizing: border-box; }
 .input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
 .input:focus-visible { border-color: var(--color-accent); outline-offset: 0px; }
-textarea.input { min-height: 90px; resize: vertical; }
-.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
-.radio input, .seg-opt input { position: absolute; opacity: 0; width: 0px; height: 0px; pointer-events: none; }
-.radio .dot { width: 16px; height: 16px; flex: 0 0 auto; border-radius: 50%; border: 1.5px solid var(--color-divider); }
-.radio:hover .dot { border-color: var(--color-accent); }
-.radio input:checked + .dot { border-color: var(--color-accent); background: var(--color-accent); box-shadow: inset 0 0 0 4px var(--color-bg); }
-.seg { display: inline-flex; overflow: hidden; border: 1px solid var(--color-divider); border-radius: var(--radius-md); }
-.seg-opt { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; font-size: 13px; cursor: pointer; }
-.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
-.seg-opt:has(input:checked) { background: var(--color-accent); color: var(--color-bg); }
-.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+select.input { cursor: pointer; }
+textarea.input { min-height: 100px; resize: vertical; }
+
 .card { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface); }
-.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
-.card-title { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 17px; line-height: 1.2; }
-.card-body { margin: 0px; font-size: 13px; opacity: 0.8; flex: 1 1 0%; }
-.card-meta { display: flex; align-items: center; gap: 6px; font-size: 11px; color: color-mix(in srgb, var(--color-text) 50%, transparent); }
-.elev-sm { box-shadow: var(--shadow-sm); }
-.elev-md { box-shadow: var(--shadow-md); }
-.elev-lg { box-shadow: var(--shadow-lg); }
-.tag { display: inline-flex; align-items: center; font-size: 11px; letter-spacing: 0.02em; padding: 3px 10px; border-radius: calc(var(--radius-md) * 0.75); }
-.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
-.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
-.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.card-kicker { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); font-weight: 700; }
+.card-title { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 19px; line-height: 1.25; margin: 0; }
+.card-body { margin: 0px; font-size: 14px; opacity: 0.85; flex: 1 1 0%; }
+.card-meta { display: flex; align-items: center; gap: 6px; font-size: 12px; color: color-mix(in srgb, var(--color-text) 60%, transparent); }
+
+.tag { display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 8px; width: fit-content; }
+.tag-accent { background: var(--color-accent); color: var(--color-bg); }
 .tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
 .nav { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-4); border-bottom: 2px solid var(--color-divider); }
 .nav-brand { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 18px; margin-right: auto; }
 .nav a { color: inherit; text-decoration: none; font-size: 14px; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--color-accent); }
-.table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.table th { text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 60%, transparent); padding: var(--space-2); border-bottom: 2px solid var(--color-divider); }
-.table td { padding: var(--space-2); border-bottom: 1px solid var(--color-divider); }
-.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
-.dialog-backdrop { position: fixed; inset: 0px; display: grid; place-items: center; padding: var(--space-4); background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent); }
-.dialog { width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-4); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-lg); }
-.dialog-title { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 20px; }
-.dialog-body { font-size: 14px; opacity: 0.85; }
-.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
 
-/* ===== Page-specific CSS (cid:css-35cdfef2) ===== */
+/* ===== Page-specific Theme & Layout ===== */
 :root { --edge: clamp(20px, 5vw, 72px); --maxw: clamp(1200px, 84vw, 1760px); }
 
 html, body { height: 100%; margin: 0px; }
-
 body { text-wrap: pretty; overflow: hidden; transition: background 0.3s, color 0.3s; }
 
 :root:not([data-theme="dark"]) {
@@ -143,15 +125,9 @@ body { text-wrap: pretty; overflow: hidden; transition: background 0.3s, color 0
 :root:not([data-theme="dark"]) h3 { color: var(--color-text) !important; }
 
 :root:not([data-theme="dark"]) [style*="var(--color-accent)"] { color: var(--color-text) !important; }
-
 :root:not([data-theme="dark"]) .btn-primary { color: rgb(29, 27, 24) !important; }
-
 :root:not([data-theme="dark"]) a { text-decoration-color: rgb(255, 217, 0); }
-
 :root:not([data-theme="dark"]) .nav a[aria-current] { background: rgb(255, 217, 0); color: rgb(29, 27, 24); padding: 2px 8px; }
-
-:root:not([data-theme="dark"]) .pubctrl[aria-pressed="true"] { color: rgb(29, 27, 24) !important; }
-
 :root:not([data-theme="dark"]) .kicker { background: rgb(255, 217, 0); padding: 2px 8px; width: fit-content; }
 
 :root[data-theme="dark"] {
@@ -159,25 +135,22 @@ body { text-wrap: pretty; overflow: hidden; transition: background 0.3s, color 0
   --color-surface: #2b2825;
   --color-text: #f0eee6;
   --color-divider: color-mix(in srgb, #f0eee6 24%, transparent);
-}
-
-:root[data-theme="dark"] .btn-primary { color: rgb(33, 31, 28) !important; }
-
-:root[data-theme="dark"] {
   --color-accent: #ffd900;
   --color-accent-600: #ffe24d;
   --color-accent-700: #ffd900;
   --helix: #ffd900;
 }
 
+:root[data-theme="dark"] .btn-primary { color: rgb(33, 31, 28) !important; }
+
 a { color: var(--color-accent-700); text-underline-offset: 3px; }
 a:hover { color: var(--color-accent-600); }
 :root[data-theme="dark"] a:hover { color: var(--color-accent-400); }
 
-.nav-brand { font-size: clamp(24px, 1.5vw, 34px) !important; }
-.nav-brand span:first-child { font-size: 1em; }
-.nav a { font-size: clamp(17px, 1.15vw, 23px) !important; }
-.nav .btn { font-size: clamp(16px, 1.1vw, 20px) !important; padding: 10px 18px !important; }
+.nav-brand { font-size: clamp(20px, 1.4vw, 30px) !important; }
+.nav-brand span:first-child { font-size: 1.05em; font-weight: 800; letter-spacing: -0.01em; }
+.nav a { font-size: clamp(14px, 1.05vw, 17px) !important; font-weight: 600; }
+.nav .btn { font-size: clamp(13px, 0.95vw, 16px) !important; padding: 8px 14px !important; }
 
 #scroller::-webkit-scrollbar { width: 0px; height: 0px; }
 #scroller { scrollbar-width: none; }
@@ -203,22 +176,14 @@ a:hover { color: var(--color-accent-600); }
 }
 
 .mq-row { overflow: hidden; mask-image: linear-gradient(90deg, transparent, rgb(0, 0, 0) 7%, rgb(0, 0, 0) 93%, transparent); }
-
 .mq-track { display: inline-flex; align-items: center; white-space: nowrap; will-change: transform; }
-
 .mq-track.left { animation: 46s linear 0s infinite normal none running mqleft; }
-
 .mq-track.right { animation: 52s linear 0s infinite normal none running mqright; }
-
 .mq-wrap:hover .mq-track { animation-play-state: paused; }
-
 .mq-item { font-family: var(--font-heading); font-weight: 800; letter-spacing: -0.02em; }
 
 @media (prefers-reduced-motion: reduce) {
   .mq-track { animation: auto ease 0s 1 normal none running none !important; }
-}
-
-@media (prefers-reduced-motion: reduce) {
   #scroller { scroll-behavior: auto; }
 }
 
@@ -226,26 +191,25 @@ a:hover { color: var(--color-accent-600); }
 .panel { min-height: 100svh !important; }
 
 @media (min-width: 1920px) {
-  .nav, .panel > div, footer > div { zoom: 1.28; }
+  .nav, .panel > div, footer > div { zoom: 1.25; }
 }
-
 @media (min-width: 2560px) {
-  .nav, .panel > div, footer > div { zoom: 1.5; }
+  .nav, .panel > div, footer > div { zoom: 1.45; }
 }
 
 @media (max-width: 640px) {
   :root { --edge: 18px; }
   html, body { overflow-x: clip; }
-  .nav { flex-wrap: wrap; gap: 8px 14px; position: relative !important; padding-top: 10px !important; padding-bottom: 12px !important; }
+  .nav { flex-wrap: wrap; gap: 8px 12px; position: relative !important; padding-top: 10px !important; padding-bottom: 12px !important; }
   .nav-tagline { display: none; }
   .nav-brand { flex: 0 0 100%; margin-right: 0px !important; }
   #dotnav { display: none !important; }
-  .nav a { font-size: 15px; }
-  #helix { opacity: 0.4 !important; }
+  .nav a { font-size: 14px; }
+  #helix { opacity: 0.35 !important; }
   body { overflow: clip visible !important; }
   #scroller { scroll-snap-type: none !important; height: auto !important; overflow: visible !important; }
   .panel { scroll-snap-align: none !important; min-height: auto !important; padding-top: 28px !important; padding-bottom: 40px !important; }
-  .panel h1 { overflow-wrap: break-word; hyphens: auto; font-size: clamp(44px, 13vw, 64px) !important; }
+  .panel h1 { overflow-wrap: break-word; hyphens: auto; font-size: clamp(38px, 11vw, 56px) !important; }
   .m-stack { grid-template-columns: 1fr !important; }
   .m-byline { font-size: 24px !important; }
   .m-hide { display: none !important; }
@@ -258,11 +222,7 @@ a:hover { color: var(--color-accent-600); }
 :root:not([data-theme="dark"]) .statwrap > div { background: rgb(255, 217, 0) !important; }
 :root:not([data-theme="dark"]) .statwrap p { color: rgb(43, 40, 36) !important; font-family: Archivo, sans-serif !important; }
 
-/* ===== DC root CSS (cid:css-79a0efb2) ===== */
-html, body { height: 100%; margin: 0px; }
 #dc-root, #dc-root > .sc-host { height: 100%; }
-
-/* ===== x-dc CSS (cid:css-9c0f0043) ===== */
 x-dc { display: none !important; }
 
 /* ===== Data-reveal initial state ===== */
@@ -275,258 +235,563 @@ x-dc { display: none !important; }
   opacity: 1 !important;
   transform: none !important;
 }
+
+/* Lang switcher pill */
+.lang-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
+  border: 1px solid var(--color-divider);
+  background: color-mix(in srgb,var(--color-bg) 75%,transparent);
+  backdrop-filter: blur(4px);
+}
+.lang-badge span { cursor: pointer; transition: color 0.2s; }
+.lang-badge span.active { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
+.lang-badge span:hover { opacity: 0.8; }
 </style>
 </head>
 <body>
-<div id="dc-root"><div class="sc-host" data-sc-name="home.dc">
+<div id="dc-root"><div class="sc-host" data-sc-name="sample.dc">
 
+  <!-- Interactive canvas: DNA helix & analytical wave background -->
   <canvas id="helix" style="position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
 
+  <!-- Sticky Top Navigation Bar -->
   <nav class="nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 30; background: color-mix(in srgb,var(--color-bg) 88%,transparent); backdrop-filter: saturate(1.2) blur(6px); padding-inline: max(var(--edge), calc((100% - var(--maxw))/2));">
-    <a class="nav-brand" href="index.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; line-height: 1.05; gap: 2px;">
-      <span>TUAN NGUYEN</span>
-      <span class="nav-tagline" style="font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent-700);">Scientist | Data evangelist | Problem solver | Storyteller</span>
+    <a class="nav-brand" href="#hero" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; line-height: 1.05; gap: 3px;">
+      <span>ÔN THƯỢNG VĨ <span style="font-size: 0.85em; opacity: 0.75; font-weight: 600;">(Wen Shang Weei)</span></span>
+      <span class="nav-tagline" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700);">Educator &amp; Academic Specialist · IELTS 8.0 · Researcher</span>
     </a>
-    <a aria-current="page" href="index.html">Home</a>
-    <a href="#">About</a>
-    <a href="#">Research</a>
-    <a href="#">Publications</a>
-    <button type="button" id="dark-toggle" class="btn btn-secondary" aria-label="Toggle dark mode" style="min-width: 64px;"><span class="sc-interp">Dark</span></button>
+    <a aria-current="page" href="#hero">About</a>
+    <a href="#feedback">Results &amp; Feedback</a>
+    <a href="#resources">Free Resources</a>
+    <a href="#classes">Courses &amp; Classes</a>
+    <a href="#contact">Contact</a>
+    
+    <!-- Trilingual Indicator -->
+    <div class="lang-badge" title="Instruction available in 3 languages">
+      <span class="active" data-lang="EN">EN</span>
+      <span style="opacity: 0.35;">·</span>
+      <span data-lang="VI">VI</span>
+      <span style="opacity: 0.35;">·</span>
+      <span data-lang="ZH">中文</span>
+    </div>
+
+    <!-- Primary CTA -->
+    <a href="#contact" class="btn btn-primary" style="text-decoration: none; font-size: 13px; padding: 8px 16px;">Book a Consultation</a>
+
+    <!-- Theme Toggle -->
+    <button type="button" id="dark-toggle" class="btn btn-secondary" aria-label="Toggle dark mode" style="min-width: 62px;"><span class="sc-interp">Dark</span></button>
   </nav>
 
+  <!-- Side Floating Dot Navigation -->
   <div id="dotnav" style="position: fixed; right: clamp(14px, 2vw, 30px); top: 50%; transform: translateY(-50%); z-index: 30; display: flex; flex-direction: column; gap: 15px;">
-    <button type="button" data-dot="" aria-label="Intro" style="width: 11px; height: 11px; padding: 0; border-color: var(--color-accent); background: var(--color-accent); cursor: pointer; transition: transform 0.3s, background 0.3s, border-color 0.3s; transform: scale(1.35); border-style: solid; border-width: 1px; border-radius: 50%;"></button>
-    <button type="button" data-dot="" aria-label="By the numbers" style="width: 11px; height: 11px; padding: 0; border-color: color-mix(in srgb, var(--color-text) 40%, transparent); background: transparent; cursor: pointer; transition: transform 0.3s, background 0.3s, border-color 0.3s; transform: scale(1); border-style: solid; border-width: 1px; border-radius: 50%;"></button>
-    <button type="button" data-dot="" aria-label="What I work on" style="width: 11px; height: 11px; padding: 0; border-color: color-mix(in srgb, var(--color-text) 40%, transparent); background: transparent; cursor: pointer; transition: transform 0.3s, background 0.3s, border-color 0.3s; transform: scale(1); border-style: solid; border-width: 1px; border-radius: 50%;"></button>
-    <button type="button" data-dot="" aria-label="Selected work" style="width: 11px; height: 11px; padding: 0; border-color: color-mix(in srgb, var(--color-text) 40%, transparent); background: transparent; cursor: pointer; transition: transform 0.3s, background 0.3s, border-color 0.3s; transform: scale(1); border-style: solid; border-width: 1px; border-radius: 50%;"></button>
-    <button type="button" data-dot="" aria-label="Contact" style="width: 11px; height: 11px; padding: 0; border-color: color-mix(in srgb, var(--color-text) 40%, transparent); background: transparent; cursor: pointer; transition: transform 0.3s, background 0.3s, border-color 0.3s; transform: scale(1); border-style: solid; border-width: 1px; border-radius: 50%;"></button>
+    <button type="button" data-dot="" aria-label="About" title="About" style="width: 11px; height: 11px; padding: 0; border-color: var(--color-accent); background: var(--color-accent); cursor: pointer; transition: transform 0.3s, background 0.3s, border-color 0.3s; transform: scale(1.35); border-style: solid; border-width: 1px; border-radius: 50%;"></button>
+    <button type="button" data-dot="" aria-label="Results & Feedback" title="Results & Feedback" style="width: 11px; height: 11px; padding: 0; border-color: color-mix(in srgb, var(--color-text) 40%, transparent); background: transparent; cursor: pointer; transition: transform 0.3s, background 0.3s, border-color 0.3s; transform: scale(1); border-style: solid; border-width: 1px; border-radius: 50%;"></button>
+    <button type="button" data-dot="" aria-label="Free Resources" title="Free Resources" style="width: 11px; height: 11px; padding: 0; border-color: color-mix(in srgb, var(--color-text) 40%, transparent); background: transparent; cursor: pointer; transition: transform 0.3s, background 0.3s, border-color 0.3s; transform: scale(1); border-style: solid; border-width: 1px; border-radius: 50%;"></button>
+    <button type="button" data-dot="" aria-label="Courses & Classes" title="Courses & Classes" style="width: 11px; height: 11px; padding: 0; border-color: color-mix(in srgb, var(--color-text) 40%, transparent); background: transparent; cursor: pointer; transition: transform 0.3s, background 0.3s, border-color 0.3s; transform: scale(1); border-style: solid; border-width: 1px; border-radius: 50%;"></button>
+    <button type="button" data-dot="" aria-label="Contact" title="Contact" style="width: 11px; height: 11px; padding: 0; border-color: color-mix(in srgb, var(--color-text) 40%, transparent); background: transparent; cursor: pointer; transition: transform 0.3s, background 0.3s, border-color 0.3s; transform: scale(1); border-style: solid; border-width: 1px; border-radius: 50%;"></button>
   </div>
 
+  <!-- Main Scroller Container -->
   <div id="scroller" style="height: 100vh; overflow-y: auto; scroll-snap-type: y mandatory; scroll-behavior: smooth; position: relative; z-index: 1;">
 
-    <!-- Section 1: Intro / Hero -->
-    <section class="panel" style="min-height: 100vh; box-sizing: border-box; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; padding: 112px var(--edge) 72px; position: relative;">
+    <!-- ==================== SECTION 1: HERO / ABOUT ==================== -->
+    <section id="hero" class="panel" style="min-height: 100vh; box-sizing: border-box; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; padding: 116px var(--edge) 64px; position: relative;">
       <div data-reveal="" style="max-width: var(--maxw); margin: 0 auto; width: 100%;">
-        <span class="hero-eyebrow kicker" style="font-size: clamp(14px, 1vw, 16px); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 26px;">Reads in, results out</span>
-        <h1 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(56px, 9vw, 132px); line-height: 0.96; letter-spacing: -0.035em; margin: 0; color: var(--color-accent);">
-          <span style="display: block;">I read</span>
-          <span style="display: block; min-height: 1.02em;"><span id="tw">all the</span><span id="tw-cursor" style="display: inline-block; width: 0.06em; height: 0.82em; background: var(--color-accent); vertical-align: -0.06em; margin-left: 0.04em; animation: 1s step-end 0s infinite normal none running blink;"></span></span>
+        
+        <!-- Eyebrow Tag -->
+        <span class="hero-eyebrow kicker" style="font-size: clamp(13px, 1vw, 15px); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 24px; font-weight: 700;">
+          IELTS 8.0 Educator · Certified High School Teacher · Published Researcher
+        </span>
+
+        <!-- Main Headline (H1 with Typewriter) -->
+        <h1 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(38px, 6.2vw, 88px); line-height: 1.02; letter-spacing: -0.03em; margin: 0; color: var(--color-accent);">
+          <span style="display: block;">Empowering Learners Through</span>
+          <span style="display: block; min-height: 1.05em;">
+            <span id="tw">Language Mastery</span>
+            <span id="tw-cursor" style="display: inline-block; width: 0.06em; height: 0.82em; background: var(--color-accent); vertical-align: -0.06em; margin-left: 0.04em; animation: 1s step-end 0s infinite normal none running blink;"></span>
+          </span>
         </h1>
-        <p style="font-size: clamp(18px, 1.5vw, 23px); line-height: 1.6; max-width: 56ch; margin: 34px 0 0; color: color-mix(in srgb,var(--color-text) 82%,transparent);">A computational biologist turning genomic data into breeding decisions for the past decade. At Agriculture Victoria I build the analysis pipelines behind DairyBio, a $50M national dairy program, from SNP arrays to long-read Nanopore genomes, work that's shaped 30+ peer-reviewed papers and invited talks at PAG, AAABG and AGTA.</p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px;">
-          <a class="btn btn-primary" href="#" style="text-decoration: none;">See my research</a>
-          <button type="button" class="btn btn-secondary" id="contact-btn">Get in touch</button>
+
+        <!-- Sub-headline (Bio) -->
+        <p style="font-size: clamp(17px, 1.35vw, 22px); line-height: 1.62; max-width: 62ch; margin: 28px 0 0; color: color-mix(in srgb,var(--color-text) 84%,transparent);">
+          Hi, I’m <strong>Ôn Thượng Vĩ</strong>. As a Biotechnology graduate from International University – VNU-HCMC with research tenure at the Oxford University Clinical Research Unit (OUCRU), I blend rigorous analytical methodologies with certified pedagogy to help students master <strong>IELTS, Public Speaking, and Academic English</strong>.
+        </p>
+
+        <!-- Quick Credential Bar (Badges) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 32px; max-width: 1080px;">
+          <div style="background: color-mix(in srgb,var(--color-bg) 85%,transparent); padding: 14px 16px; border: 1.5px solid var(--color-divider); backdrop-filter: blur(4px);">
+            <div style="font-weight: 800; font-size: 15px; color: var(--color-accent); margin-bottom: 4px;">8.0 IELTS Academic</div>
+            <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 72%,transparent);">8.5 Listening · 8.0 Reading · 8.0 Writing · 7.5 Speaking (CEFR C1)</div>
+          </div>
+          <div style="background: color-mix(in srgb,var(--color-bg) 85%,transparent); padding: 14px 16px; border: 1.5px solid var(--color-divider); backdrop-filter: blur(4px);">
+            <div style="font-weight: 800; font-size: 15px; color: var(--color-accent); margin-bottom: 4px;">Certified Educator</div>
+            <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 72%,transparent);">High School Pedagogical Certificate (VNU Hanoi) &amp; TESOL (ASU, ongoing)</div>
+          </div>
+          <div style="background: color-mix(in srgb,var(--color-bg) 85%,transparent); padding: 14px 16px; border: 1.5px solid var(--color-divider); backdrop-filter: blur(4px);">
+            <div style="font-weight: 800; font-size: 15px; color: var(--color-accent); margin-bottom: 4px;">Published Researcher</div>
+            <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 72%,transparent);">Co-author in <em>Journal of Applied Microbiology</em> &amp; OUCRU Ambassador</div>
+          </div>
+          <div style="background: color-mix(in srgb,var(--color-bg) 85%,transparent); padding: 14px 16px; border: 1.5px solid var(--color-divider); backdrop-filter: blur(4px);">
+            <div style="font-weight: 800; font-size: 15px; color: var(--color-accent); margin-bottom: 4px;">Trilingual Instruction</div>
+            <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 72%,transparent);">English · Vietnamese (Native) · Chinese (Fluent)</div>
+          </div>
         </div>
+
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px;">
+          <a class="btn btn-primary" href="#classes" style="text-decoration: none; padding: 12px 24px; font-size: 15px;">Explore Class Programs</a>
+          <a class="btn btn-secondary" href="#resources" style="text-decoration: none; padding: 12px 22px; font-size: 15px;">Download Free Study Materials</a>
+          <a class="btn btn-secondary" href="#contact" style="text-decoration: none; padding: 12px 22px; font-size: 15px;">Get in Touch</a>
+        </div>
+
       </div>
-      <div class="m-hide" style="position: absolute; left: 0; right: 0; bottom: 26px; display: flex; justify-content: center;">
-        <button type="button" id="scroll-next" aria-label="Scroll to next" style="display: flex; flex-direction: column; align-items: center; gap: 8px; background: none; border: 0; cursor: pointer; color: color-mix(in srgb,var(--color-text) 60%,transparent); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--font-body);">
+
+      <!-- Scroll Indicator -->
+      <div class="m-hide" style="position: absolute; left: 0; right: 0; bottom: 22px; display: flex; justify-content: center;">
+        <button type="button" class="scroll-next-btn" aria-label="Scroll to next" style="display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; cursor: pointer; color: color-mix(in srgb,var(--color-text) 60%,transparent); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--font-body);">
           Scroll
           <span style="display: block; width: 12px; height: 12px; border-right: 2px solid var(--color-accent); border-bottom: 2px solid var(--color-accent); transform: rotate(45deg); animation: 1.8s ease-in-out 0s infinite normal none running bob;"></span>
         </button>
       </div>
     </section>
 
-    <!-- Section 2: By the numbers -->
-    <section class="panel" style="min-height: 100vh; box-sizing: border-box; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; padding: 112px var(--edge) 72px; position: relative;">
-      <div data-reveal="" style="max-width: var(--maxw); margin: 0 auto; width: 100%; box-sizing: border-box; padding: clamp(28px, 3.2vw, 48px) clamp(22px, 3vw, 44px); background: color-mix(in srgb,var(--color-bg) 88%,transparent); backdrop-filter: blur(3px); border: 2px solid var(--color-divider);">
-        <div class="mq-wrap" style="margin-bottom: clamp(28px, 4vw, 52px); display: flex; flex-direction: column; gap: clamp(10px, 1.4vw, 18px);">
-          <!-- Row 1: left marquee -->
-          <div class="mq-row"><div class="mq-track left" style="animation-duration: 46s;">
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: var(--color-accent);">Genomics</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: var(--color-text);">Long-read sequencing</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Nanopore</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: var(--color-text);">Structural variants</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Multi-omics</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: var(--color-accent);">RNA-seq</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: var(--color-text);">Bioinformatics</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Single-cell</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">PacBio</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
+    <!-- ==================== SECTION 2: RESULTS & FEEDBACK ==================== -->
+    <section id="feedback" class="panel" style="min-height: 100vh; box-sizing: border-box; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; padding: 104px var(--edge) 56px; position: relative;">
+      <div data-reveal="" style="max-width: var(--maxw); margin: 0 auto; width: 100%; box-sizing: border-box; padding: clamp(24px, 2.8vw, 42px) clamp(20px, 2.5vw, 38px); background: color-mix(in srgb,var(--color-bg) 88%,transparent); backdrop-filter: blur(4px); border: 2px solid var(--color-divider);">
+        
+        <!-- Marquee Tickers -->
+        <div class="mq-wrap" style="margin-bottom: clamp(24px, 3.2vw, 40px); display: flex; flex-direction: column; gap: clamp(8px, 1.2vw, 14px);">
+          
+          <!-- Row 1: Left Marquee -->
+          <div class="mq-row"><div class="mq-track left" style="animation-duration: 44s;">
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">IELTS 8.0 Academic</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Analytical Writing</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Critical Thinking</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Public Speaking</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Scientific English</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">Certified Pedagogy</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Research Literacy</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Reading Speed Strategies</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
             <!-- duplicate for seamless loop -->
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: var(--color-accent);">Genomics</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: var(--color-text);">Long-read sequencing</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Nanopore</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: var(--color-text);">Structural variants</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Multi-omics</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: var(--color-accent);">RNA-seq</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: var(--color-text);">Bioinformatics</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Single-cell</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(22px, 2.6vw, 38px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">PacBio</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">IELTS 8.0 Academic</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Analytical Writing</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Critical Thinking</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Public Speaking</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Scientific English</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">Certified Pedagogy</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Research Literacy</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Reading Speed Strategies</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
           </div></div>
-          <!-- Row 2: right marquee -->
-          <div class="mq-row"><div class="mq-track right" style="animation-duration: 52s;">
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">Dairy cattle</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">GWAS</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Genomic prediction</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Imputation</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">DairyBio</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Nextflow</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">HPC</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">AWS</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">R &amp; Python</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
+
+          <!-- Row 2: Right Marquee -->
+          <div class="mq-row"><div class="mq-track right" style="animation-duration: 50s;">
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-accent);">Pétrus Ký High School</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">The Edge - Edupath</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-text);">HOCMAI ICANCONNECT</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">OUCRU Ambassador</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-accent);">VNU Hanoi</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-text);">VNU-HCMC</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Arizona State University</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
             <!-- duplicate -->
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">Dairy cattle</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">GWAS</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Genomic prediction</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Imputation</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">DairyBio</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Nextflow</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">HPC</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">AWS</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">R &amp; Python</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-accent);">Pétrus Ký High School</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">The Edge - Edupath</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-text);">HOCMAI ICANCONNECT</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">OUCRU Ambassador</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-accent);">VNU Hanoi</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-text);">VNU-HCMC</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Arizona State University</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
           </div></div>
-          <!-- Row 3: left marquee -->
-          <div class="mq-row"><div class="mq-track left" style="animation-duration: 58s;">
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">Machine learning</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">LLMs &amp; GenAI</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Explainable AI</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Aquaculture</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Prawns &amp; catfish</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Data evangelist</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">Storyteller</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Coffee-powered</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Photography</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Gaming</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
+
+          <!-- Row 3: Left Marquee -->
+          <div class="mq-row"><div class="mq-track left" style="animation-duration: 54s;">
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-accent);">Trilingual: EN · VI · 中文</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-text);">Logic-Driven Frameworks</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">AI-Assisted Learning</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-text);">Gemini &amp; Claude Workflows</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Progress Tracking</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-accent);">Dedicated Mentorship</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
             <!-- duplicate -->
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">Machine learning</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">LLMs &amp; GenAI</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Explainable AI</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Aquaculture</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Prawns &amp; catfish</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Data evangelist</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-accent);">Storyteller</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Coffee-powered</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: var(--color-text);">Photography</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
-            <span class="mq-item" style="font-size: clamp(20px, 2.2vw, 32px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Gaming</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(20px, 2.4vw, 36px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-accent);">Trilingual: EN · VI · 中文</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-text);">Logic-Driven Frameworks</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">AI-Assisted Learning</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-text);">Gemini &amp; Claude Workflows</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: color-mix(in srgb,var(--color-text) 60%,transparent);">Progress Tracking</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
+            <span class="mq-item" style="font-size: clamp(19px, 2vw, 29px); color: var(--color-accent);">Dedicated Mentorship</span><span aria-hidden="true" style="display: inline-block; width: 7px; height: 7px; background: var(--color-accent); margin: 0 clamp(18px, 2.2vw, 32px); flex: 0 0 auto;"></span>
           </div></div>
+
         </div>
-        <span class="m-byline" style="display: block; font-size: 40px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 28px; font-weight: 700;">By the numbers</span>
-        <div class="statwrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2px; background: var(--color-divider); border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider);">
-          <div style="background: var(--color-bg); padding: clamp(28px, 4vw, 52px) 8px; text-align: center;">
-            <p style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 1; color: var(--color-accent); margin: 0;">10+</p>
-            <p style="font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; margin: 16px 0 0; color: color-mix(in srgb,var(--color-text) 68%,transparent);">Years reading genomes</p>
+
+        <!-- Section Title & Sub-caption -->
+        <div style="margin-bottom: 24px;">
+          <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(26px, 3vw, 42px); letter-spacing: -0.02em; margin: 0 0 8px; color: var(--color-accent);">
+            Proven Dedication. Trusted by Leading Institutions &amp; Students.
+          </h2>
+          <p style="font-size: clamp(15px, 1.15vw, 18px); color: color-mix(in srgb,var(--color-text) 75%,transparent); margin: 0;">
+            Recognized for instructional excellence across K-12 schools, online platforms, and private test-prep programs.
+          </p>
+        </div>
+
+        <!-- Key Metrics Banner (statwrap) -->
+        <div class="statwrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2px; background: var(--color-divider); border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider); margin-bottom: 20px;">
+          <div style="background: var(--color-bg); padding: clamp(20px, 2.6vw, 36px) 8px; text-align: center;">
+            <p style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(38px, 4.2vw, 60px); line-height: 1; color: var(--color-accent); margin: 0;">8.0</p>
+            <p style="font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; margin: 12px 0 0; color: color-mix(in srgb,var(--color-text) 68%,transparent); font-weight: 700;">IELTS Academic (C1)</p>
           </div>
-          <div style="background: var(--color-bg); padding: clamp(28px, 4vw, 52px) 8px; text-align: center;">
-            <p style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 1; color: var(--color-accent); margin: 0;">30+</p>
-            <p style="font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; margin: 16px 0 0; color: color-mix(in srgb,var(--color-text) 68%,transparent);">Peer-reviewed publications</p>
+          <div style="background: var(--color-bg); padding: clamp(20px, 2.6vw, 36px) 8px; text-align: center;">
+            <p style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(38px, 4.2vw, 60px); line-height: 1; color: var(--color-accent); margin: 0;">100+</p>
+            <p style="font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; margin: 12px 0 0; color: color-mix(in srgb,var(--color-text) 68%,transparent); font-weight: 700;">Students Mentored</p>
           </div>
-          <div style="background: var(--color-bg); padding: clamp(28px, 4vw, 52px) 8px; text-align: center;">
-            <p style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 1; color: var(--color-accent); margin: 0;">700</p>
-            <p style="font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; margin: 16px 0 0; color: color-mix(in srgb,var(--color-text) 68%,transparent);">Citations · h-index 16</p>
+          <div style="background: var(--color-bg); padding: clamp(20px, 2.6vw, 36px) 8px; text-align: center;">
+            <p style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(38px, 4.2vw, 60px); line-height: 1; color: var(--color-accent); margin: 0;">4</p>
+            <p style="font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; margin: 12px 0 0; color: color-mix(in srgb,var(--color-text) 68%,transparent); font-weight: 700;">Institutional Partners</p>
           </div>
-          <div style="background: var(--color-bg); padding: clamp(28px, 4vw, 52px) 8px; text-align: center;">
-            <p style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(44px, 5vw, 72px); line-height: 1; color: var(--color-accent); margin: 0;">0.5 mil+</p>
-            <p style="font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; margin: 16px 0 0; color: color-mix(in srgb,var(--color-text) 68%,transparent);">Largest dataset handled</p>
+          <div style="background: var(--color-bg); padding: clamp(20px, 2.6vw, 36px) 8px; text-align: center;">
+            <p style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(38px, 4.2vw, 60px); line-height: 1; color: var(--color-accent); margin: 0;">3</p>
+            <p style="font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; margin: 12px 0 0; color: color-mix(in srgb,var(--color-text) 68%,transparent); font-weight: 700;">Teaching Languages</p>
           </div>
         </div>
+
+        <!-- Institutional & Award Highlight Banner -->
+        <div style="background: var(--color-surface); padding: 16px 20px; border: 1.5px solid var(--color-divider); margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
+          <div>
+            <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent);">Award:</span>
+            <span style="font-weight: 700; font-size: 14px; margin-left: 6px;">Certificate of Recognition — Exceptional Dedication to ICANCONNECT (HOCMAI)</span>
+          </div>
+          <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 70%,transparent);">
+            <strong>Affiliations:</strong> Pétrus Ký High School · The Edge - Edupath · HOCMAI · OUCRU Youth Engagement
+          </div>
+        </div>
+
+        <!-- 3-Column Testimonials Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+          
+          <!-- Testimonial 1 -->
+          <div style="background: var(--color-bg); padding: 22px 20px; border: 1.5px solid var(--color-divider); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="tag tag-accent" style="margin-bottom: 12px;">IELTS 7.0+ Target Band</span>
+              <p style="font-size: 15px; line-height: 1.6; font-style: italic; margin: 10px 0 16px; color: color-mix(in srgb,var(--color-text) 88%,transparent);">
+                &ldquo;Teacher Vĩ's analytical approach to IELTS Writing and Reading helped me break through my plateau. His custom templates and detailed corrections made complex academic essays feel manageable.&rdquo;
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--color-divider); padding-top: 10px; font-size: 13px;">
+              <strong>Student Mentee</strong> · <span style="opacity: 0.7;">Target Band Achieved: IELTS 7.0+</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div style="background: var(--color-bg); padding: 22px 20px; border: 1.5px solid var(--color-divider); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="tag tag-accent" style="margin-bottom: 12px;">Public Speaking</span>
+              <p style="font-size: 15px; line-height: 1.6; font-style: italic; margin: 10px 0 16px; color: color-mix(in srgb,var(--color-text) 88%,transparent);">
+                &ldquo;Coming from a shy background, the public speaking frameworks and supportive feedback in class completely transformed how I present ideas in English.&rdquo;
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--color-divider); padding-top: 10px; font-size: 13px;">
+              <strong>High School Student</strong> · <span style="opacity: 0.7;">Speech &amp; Debate Program</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div style="background: var(--color-bg); padding: 22px 20px; border: 1.5px solid var(--color-divider); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="tag tag-accent" style="margin-bottom: 12px;">Parent Feedback</span>
+              <p style="font-size: 15px; line-height: 1.6; font-style: italic; margin: 10px 0 16px; color: color-mix(in srgb,var(--color-text) 88%,transparent);">
+                &ldquo;What sets Mr. Vĩ apart is his organization and regular progress tracking. We always knew exactly where our child stood and what needed improvement each month.&rdquo;
+              </p>
+            </div>
+            <div style="border-top: 1px solid var(--color-divider); padding-top: 10px; font-size: 13px;">
+              <strong>Parent of Private Student</strong> · <span style="opacity: 0.7;">Academic Tutoring</span>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
-    <!-- Section 3: What I work on -->
-    <section class="panel" style="min-height: 100vh; box-sizing: border-box; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; padding: 112px var(--edge) 72px; position: relative;">
+    <!-- ==================== SECTION 3: FREE RESOURCES ==================== -->
+    <section id="resources" class="panel" style="min-height: 100vh; box-sizing: border-box; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; padding: 104px var(--edge) 56px; position: relative;">
       <div data-reveal="" style="max-width: var(--maxw); margin: 0 auto; width: 100%;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: clamp(24px, 3vw, 44px);">
-          <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(30px, 3.4vw, 48px); letter-spacing: -0.02em; margin: 0; color: var(--color-accent);">What I work on</h2>
-          <a href="#" style="font-size: 14px; text-decoration: none;">All research areas &#x2192;</a>
+        
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: clamp(22px, 2.6vw, 36px);">
+          <div>
+            <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(28px, 3.2vw, 46px); letter-spacing: -0.02em; margin: 0 0 6px; color: var(--color-accent);">
+              Free Learning Hub &amp; Academic Resources
+            </h2>
+            <p style="font-size: clamp(15px, 1.15vw, 18px); color: color-mix(in srgb,var(--color-text) 75%,transparent); margin: 0; max-width: 60ch;">
+              Curated study guides, custom frameworks, and AI-assisted learning tools built from years of classroom and research experience.
+            </p>
+          </div>
+          <a href="#contact" class="btn btn-secondary" style="font-size: 14px; text-decoration: none;">Request Custom Materials &#x2192;</a>
         </div>
-        <div class="m-stack" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; background: var(--color-divider); border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider);">
-          <div style="background: var(--color-bg); padding: clamp(22px, 2.4vw, 32px) clamp(20px, 2vw, 26px); display: flex; flex-direction: column; gap: 10px;">
-            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; font-feature-settings: 'tnum'; color: var(--color-accent-700);">01</span>
-            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(19px, 1.9vw, 24px); letter-spacing: -0.01em; margin: 0;">Long-read genomics</h3>
-            <p style="font-size: clamp(18px, 1.5vw, 23px); line-height: 1.55; margin: 0; color: color-mix(in srgb,var(--color-text) 78%,transparent);">Applying Oxford Nanopore and PacBio long reads to make sense of variants, reaching the parts short reads can't.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 2px; background: var(--color-divider); border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider);">
+          
+          <!-- Resource 1 -->
+          <div style="background: var(--color-bg); padding: clamp(24px, 2.5vw, 34px) 24px; display: flex; flex-direction: column; gap: 14px;">
+            <span class="tag tag-accent">IELTS Prep</span>
+            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(19px, 1.8vw, 24px); letter-spacing: -0.01em; margin: 0;">
+              IELTS Reading &amp; Writing Band 8.0 Toolkit
+            </h3>
+            <p style="font-size: clamp(15px, 1.1vw, 17px); line-height: 1.6; margin: 0; flex: 1; color: color-mix(in srgb,var(--color-text) 78%,transparent);">
+              Logic-driven essay structures, academic vocabulary lists, and reading comprehension strategies modeled after real Band 8.0 test-taker performance.
+            </p>
+            <div style="margin-top: 8px;">
+              <a href="#contact" class="btn btn-primary" style="text-decoration: none; width: 100%; justify-content: center; font-size: 14px;">Download PDF Guide &#x2192;</a>
+            </div>
           </div>
-          <div style="background: var(--color-bg); padding: clamp(22px, 2.4vw, 32px) clamp(20px, 2vw, 26px); display: flex; flex-direction: column; gap: 10px;">
-            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; font-feature-settings: 'tnum'; color: var(--color-accent-700);">02</span>
-            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(19px, 1.9vw, 24px); letter-spacing: -0.01em; margin: 0;">Transcriptomics &amp; methylation</h3>
-            <p style="font-size: clamp(18px, 1.5vw, 23px); line-height: 1.55; margin: 0; color: color-mix(in srgb,var(--color-text) 78%,transparent);">Bulk RNA-seq to see which genes switch on, plus the methylation calls Nanopore gives for free alongside sequence.</p>
+
+          <!-- Resource 2 -->
+          <div style="background: var(--color-bg); padding: clamp(24px, 2.5vw, 34px) 24px; display: flex; flex-direction: column; gap: 14px;">
+            <span class="tag tag-accent">Communication</span>
+            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(19px, 1.8vw, 24px); letter-spacing: -0.01em; margin: 0;">
+              Public Speaking &amp; Presentation Frameworks
+            </h3>
+            <p style="font-size: clamp(15px, 1.1vw, 17px); line-height: 1.6; margin: 0; flex: 1; color: color-mix(in srgb,var(--color-text) 78%,transparent);">
+              Step-by-step templates for structuring persuasive speeches, academic presentations, confidence-building drills, and clear Q&amp;A responses.
+            </p>
+            <div style="margin-top: 8px;">
+              <a href="#contact" class="btn btn-primary" style="text-decoration: none; width: 100%; justify-content: center; font-size: 14px;">Access Templates &#x2192;</a>
+            </div>
           </div>
-          <div style="background: var(--color-bg); padding: clamp(22px, 2.4vw, 32px) clamp(20px, 2vw, 26px); display: flex; flex-direction: column; gap: 10px;">
-            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; font-feature-settings: 'tnum'; color: var(--color-accent-700);">03</span>
-            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(19px, 1.9vw, 24px); letter-spacing: -0.01em; margin: 0;">Big-data mining in genomics</h3>
-            <p style="font-size: clamp(18px, 1.5vw, 23px); line-height: 1.55; margin: 0; color: color-mix(in srgb,var(--color-text) 78%,transparent);">Finding signal in large genomic datasets: variants, traits, and the links between them.</p>
+
+          <!-- Resource 3 -->
+          <div style="background: var(--color-bg); padding: clamp(24px, 2.5vw, 34px) 24px; display: flex; flex-direction: column; gap: 14px;">
+            <span class="tag tag-accent">Academic &amp; AI Skills</span>
+            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(19px, 1.8vw, 24px); letter-spacing: -0.01em; margin: 0;">
+              Scientific Writing &amp; AI Study Workflows
+            </h3>
+            <p style="font-size: clamp(15px, 1.1vw, 17px); line-height: 1.6; margin: 0; flex: 1; color: color-mix(in srgb,var(--color-text) 78%,transparent);">
+              Practical prompt guides and ethical workflows using Gemini, ChatGPT, and Claude to summarize literature, structure study notes, and refine drafts.
+            </p>
+            <div style="margin-top: 8px;">
+              <a href="#contact" class="btn btn-primary" style="text-decoration: none; width: 100%; justify-content: center; font-size: 14px;">View Workflow Guide &#x2192;</a>
+            </div>
           </div>
-          <div style="background: var(--color-bg); padding: clamp(22px, 2.4vw, 32px) clamp(20px, 2vw, 26px); display: flex; flex-direction: column; gap: 10px;">
-            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; font-feature-settings: 'tnum'; color: var(--color-accent-700);">04</span>
-            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(19px, 1.9vw, 24px); letter-spacing: -0.01em; margin: 0;">Bioinformatics tools &amp; workflows</h3>
-            <p style="font-size: clamp(18px, 1.5vw, 23px); line-height: 1.55; margin: 0; color: color-mix(in srgb,var(--color-text) 78%,transparent);">Building scalable, reproducible pipelines in Nextflow, plus the small scripts that quietly hold a project together.</p>
-          </div>
+
         </div>
+
       </div>
     </section>
 
-    <!-- Section 4: Selected work -->
-    <section class="panel" style="min-height: 100vh; box-sizing: border-box; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; padding: 112px var(--edge) 72px; position: relative;">
+    <!-- ==================== SECTION 4: COURSES & PROGRAMS ==================== -->
+    <section id="classes" class="panel" style="min-height: 100vh; box-sizing: border-box; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; padding: 104px var(--edge) 56px; position: relative;">
       <div data-reveal="" style="max-width: var(--maxw); margin: 0 auto; width: 100%;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: clamp(24px, 3vw, 44px);">
-          <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(30px, 3.4vw, 48px); letter-spacing: -0.02em; margin: 0; color: var(--color-accent);">Selected work</h2>
-          <a href="#" style="font-size: 14px; text-decoration: none;">See all work &#x2192;</a>
+        
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: clamp(20px, 2.5vw, 32px);">
+          <div>
+            <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(28px, 3.2vw, 46px); letter-spacing: -0.02em; margin: 0 0 6px; color: var(--color-accent);">
+              Tailored Educational Programs
+            </h2>
+            <p style="font-size: clamp(15px, 1.15vw, 18px); color: color-mix(in srgb,var(--color-text) 75%,transparent); margin: 0;">
+              Custom-built curricula designed for measurable progress, clear milestones, and personalized feedback.
+            </p>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="font-size: 14px; text-decoration: none;">Enroll / Request Placement Test &#x2192;</a>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; background: var(--color-divider); border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider);">
-          <div style="background: var(--color-bg); padding: clamp(26px, 2.6vw, 34px) 26px; display: flex; flex-direction: column; gap: 14px;">
-            <span style="font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700);">Agriculture Victoria · Now</span>
-            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 24px; line-height: 1.15; margin: 0;">Dairy cattle genomics</h3>
-            <p style="font-size: 23px; line-height: 1.6; margin: 0; flex: 1; color: color-mix(in srgb,var(--color-text) 76%,transparent);">SNP arrays through to long-read sequencing, hunting genetic variants and mapping complex traits for the Australian dairy industry.</p>
+
+        <!-- 3 Program Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 2px; background: var(--color-divider); border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider); margin-bottom: 24px;">
+          
+          <!-- Program 1 -->
+          <div style="background: var(--color-bg); padding: clamp(22px, 2.4vw, 30px) 24px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700); text-transform: uppercase;">Program 01 · Test Prep</span>
+            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; line-height: 1.2; margin: 0;">IELTS Academic Intensive</h3>
+            <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 65%,transparent); font-weight: 600;">
+              Target: High school, university applicants &amp; professionals
+            </div>
+            <p style="font-size: 15px; line-height: 1.55; margin: 0; flex: 1; color: color-mix(in srgb,var(--color-text) 78%,transparent);">
+              Comprehensive 4-skills training with deep-dive analytical feedback on Writing (8.0 methodology) and Listening/Reading speed strategies.
+            </p>
+            <div style="font-size: 13px; font-weight: 700; color: var(--color-accent);">Format: 1-on-1 Coaching or Small Group</div>
+            <a href="#contact" class="btn btn-secondary" style="margin-top: 6px; text-decoration: none; justify-content: center;">Request Syllabus &#x2192;</a>
           </div>
-          <div style="background: var(--color-bg); padding: clamp(26px, 2.6vw, 34px) 26px; display: flex; flex-direction: column; gap: 14px;">
-            <span style="font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700);">PhD · 2016–2019</span>
-            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 24px; line-height: 1.15; margin: 0;">Aquaculture genomics</h3>
-            <p style="font-size: 23px; line-height: 1.6; margin: 0; flex: 1; color: color-mix(in srgb,var(--color-text) 76%,transparent);">Molecular genetics of lobsters and fish at the University of the Sunshine Coast, my first deep dive into genomes.</p>
+
+          <!-- Program 2 -->
+          <div style="background: var(--color-bg); padding: clamp(22px, 2.4vw, 30px) 24px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700); text-transform: uppercase;">Program 02 · Speech &amp; Debate</span>
+            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; line-height: 1.2; margin: 0;">Public Speaking &amp; Academic Communication</h3>
+            <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 65%,transparent); font-weight: 600;">
+              Target: K-12 students &amp; trilingual (EN/ZH/VI) adult learners
+            </div>
+            <p style="font-size: 15px; line-height: 1.55; margin: 0; flex: 1; color: color-mix(in srgb,var(--color-text) 78%,transparent);">
+              Critical thinking, debate principles, international pronunciation, and structured presentation skills for confident stage and classroom performance.
+            </p>
+            <div style="font-size: 13px; font-weight: 700; color: var(--color-accent);">Format: Interactive Small Group Classes</div>
+            <a href="#contact" class="btn btn-secondary" style="margin-top: 6px; text-decoration: none; justify-content: center;">Check Class Schedule &#x2192;</a>
           </div>
-          <div style="background: var(--color-bg); padding: clamp(26px, 2.6vw, 34px) 26px; display: flex; flex-direction: column; gap: 14px;">
-            <span style="font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700);">Vietnam · Earlier</span>
-            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 24px; line-height: 1.15; margin: 0;">Biotechnology</h3>
-            <p style="font-size: 23px; line-height: 1.6; margin: 0; flex: 1; color: color-mix(in srgb,var(--color-text) 76%,transparent);">Early molecular-genetics work at International University, HCMC, where the whole story started.</p>
+
+          <!-- Program 3 -->
+          <div style="background: var(--color-bg); padding: clamp(22px, 2.4vw, 30px) 24px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700); text-transform: uppercase;">Program 03 · STEM Tutoring</span>
+            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; line-height: 1.2; margin: 0;">Academic Biology &amp; Scientific English</h3>
+            <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 65%,transparent); font-weight: 600;">
+              Target: International school students &amp; STEM aspirants
+            </div>
+            <p style="font-size: 15px; line-height: 1.55; margin: 0; flex: 1; color: color-mix(in srgb,var(--color-text) 78%,transparent);">
+              High school Biology taught with certified pedagogy, scientific writing workshops, and foundational data/research literacy for STEM careers.
+            </p>
+            <div style="font-size: 13px; font-weight: 700; color: var(--color-accent);">Format: Custom Private Tutoring</div>
+            <a href="#contact" class="btn btn-secondary" style="margin-top: 6px; text-decoration: none; justify-content: center;">Inquire Now &#x2192;</a>
+          </div>
+
+        </div>
+
+        <!-- The Learning Process (4-Step Horizontal Bar) -->
+        <span style="display: block; font-size: 13px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 12px;">
+          The Learning Process · 4 Steps to Mastery
+        </span>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; background: var(--color-divider); border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider);">
+          <div style="background: var(--color-bg); padding: 18px 16px;">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; color: var(--color-accent);">01 · Diagnostic</div>
+            <div style="font-weight: 700; font-size: 15px; margin: 4px 0 2px;">Placement Assessment</div>
+            <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 72%,transparent);">Evaluate current proficiency and pinpoint specific skill gaps.</div>
+          </div>
+          <div style="background: var(--color-bg); padding: 18px 16px;">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; color: var(--color-accent);">02 · Roadmap</div>
+            <div style="font-weight: 700; font-size: 15px; margin: 4px 0 2px;">Custom Curriculum</div>
+            <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 72%,transparent);">Personalized roadmap tailored to target score and timeline.</div>
+          </div>
+          <div style="background: var(--color-bg); padding: 18px 16px;">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; color: var(--color-accent);">03 · Engagement</div>
+            <div style="font-weight: 700; font-size: 15px; margin: 4px 0 2px;">Active Instruction</div>
+            <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 72%,transparent);">Structured lessons integrating digital tools and active practice.</div>
+          </div>
+          <div style="background: var(--color-bg); padding: 18px 16px;">
+            <div style="font-family: var(--font-heading); font-weight: 800; font-size: 14px; color: var(--color-accent);">04 · Milestones</div>
+            <div style="font-weight: 700; font-size: 15px; margin: 4px 0 2px;">Tracking &amp; Reports</div>
+            <div style="font-size: 13px; color: color-mix(in srgb,var(--color-text) 72%,transparent);">Transparent milestone reports for students and parents.</div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Section 5: Contact -->
-    <section id="contact" class="panel" style="min-height: 100vh; box-sizing: border-box; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: space-between; padding: 112px var(--edge) 0; position: relative;">
+    <!-- ==================== SECTION 5: CONTACT & FOOTER ==================== -->
+    <section id="contact" class="panel" style="min-height: 100vh; box-sizing: border-box; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: space-between; padding: 104px var(--edge) 0; position: relative;">
       <div data-reveal="" style="flex: 1; display: flex; align-items: center; max-width: var(--maxw); margin: 0 auto; width: 100%;">
-        <div style="display: grid; grid-template-columns: 1fr; gap: 2px; background: var(--color-divider); border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider); width: 100%;">
-          <div style="background: var(--color-bg); padding: clamp(28px, 3vw, 44px);">
-            <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(34px, 4.4vw, 60px); letter-spacing: -0.02em; line-height: 1.02; margin: 0 0 20px; color: var(--color-accent);">Let's talk science.</h2>
-            <p style="font-size: clamp(18px, 1.5vw, 23px); line-height: 1.62; margin: 0; max-width: 46ch; color: color-mix(in srgb,var(--color-text) 80%,transparent);">Always up for a chat about genomics, sequencing, tech, or anything in between. Based in Melbourne, reachable from anywhere.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2px; background: var(--color-divider); border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider); width: 100%;">
+          
+          <!-- Left Column: Direct Contact Info -->
+          <div style="background: var(--color-bg); padding: clamp(26px, 3.2vw, 44px); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="hero-eyebrow kicker" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 16px; font-weight: 700;">
+                Get In Touch
+              </span>
+              <h2 style="font-family: var(--font-heading); font-weight: 800; font-size: clamp(30px, 3.8vw, 54px); letter-spacing: -0.02em; line-height: 1.05; margin: 0 0 16px; color: var(--color-accent);">
+                Let’s Connect &amp; Build Your Learning Roadmap.
+              </h2>
+              <p style="font-size: clamp(15px, 1.2vw, 19px); line-height: 1.62; margin: 0 0 24px; color: color-mix(in srgb,var(--color-text) 80%,transparent);">
+                Reach out for class enrollment, diagnostic placement tests, academic consultations, or B2B educational collaborations.
+              </p>
+            </div>
+
+            <!-- Contact detail list -->
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="background: var(--color-surface); padding: 14px 16px; border: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; opacity: 0.65;">Location</span>
+                <span style="font-weight: 700; font-size: 14px;">HCMC – Binh Duong, Vietnam <span style="font-weight: 400; font-size: 12px; opacity: 0.7;">(In-person &amp; Online)</span></span>
+              </div>
+              <a href="tel:0933305065" style="background: var(--color-surface); padding: 14px 16px; border: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit;">
+                <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; opacity: 0.65;">Phone / Zalo</span>
+                <span style="font-weight: 800; font-size: 15px; color: var(--color-accent);">0933.305.065</span>
+              </a>
+              <a href="mailto:viot.tech@gmail.com" style="background: var(--color-surface); padding: 14px 16px; border: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: inherit;">
+                <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; opacity: 0.65;">Email</span>
+                <span style="font-weight: 800; font-size: 15px; color: var(--color-accent);">viot.tech@gmail.com</span>
+              </a>
+              <div style="background: var(--color-surface); padding: 14px 16px; border: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; opacity: 0.65;">Languages</span>
+                <span style="font-weight: 700; font-size: 14px;">English · Tiếng Việt · 中文</span>
+              </div>
+            </div>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 2px; background: var(--color-divider);">
-            <a href="mailto:drkangabu@gmail.com" style="background: var(--color-bg); padding: 18px 16px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; color: inherit; flex: 1;"><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb,var(--color-text) 60%,transparent);">Email</span><span style="font-weight: 600;">drkangabu@gmail.com</span></a>
-            <a href="https://twitter.com/DrKangabu" style="background: var(--color-bg); padding: 18px 16px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; color: inherit; flex: 1;"><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb,var(--color-text) 60%,transparent);">X / Twitter</span><span style="font-weight: 600;">@DrKangabu</span></a>
-            <a href="https://scholar.google.com/citations?user=YuS731wAAAAJ" style="background: var(--color-bg); padding: 18px 16px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; color: inherit; flex: 1;"><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb,var(--color-text) 60%,transparent);">Scholar</span><span style="font-weight: 600;">Google Scholar &#x2192;</span></a>
+
+          <!-- Right Column: Interactive Quick Inquiry Form -->
+          <div style="background: var(--color-bg); padding: clamp(26px, 3.2vw, 44px);">
+            <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; margin: 0 0 16px;">Quick Consultation Form</h3>
+            <form id="inquiry-form" style="display: flex; flex-direction: column; gap: 14px;">
+              <div class="field">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" class="input" placeholder="e.g., Nguyen Van A" required>
+              </div>
+
+              <div class="field">
+                <label for="contact-input">Email or Phone / Zalo *</label>
+                <input type="text" id="contact-input" class="input" placeholder="0933... or student@example.com" required>
+              </div>
+
+              <div class="field">
+                <label for="program-select">I am interested in</label>
+                <select id="program-select" class="input">
+                  <option value="IELTS Preparation">IELTS Preparation (Academic 8.0 focus)</option>
+                  <option value="Public Speaking & Communication">Public Speaking &amp; Academic Communication</option>
+                  <option value="Academic Biology / STEM English">Academic Biology / STEM English</option>
+                  <option value="Executive / B2B Collaboration">Executive / B2B Collaboration</option>
+                  <option value="Diagnostic Placement Test">Diagnostic Placement Test</option>
+                  <option value="Other">Other Inquiries</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Current Level &amp; Target Goals</label>
+                <textarea id="message" class="input" placeholder="Tell me about your current band score, timeline, or specific target (e.g. Aiming for IELTS 7.5 in 4 months)..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="padding: 12px 20px; font-size: 15px; margin-top: 4px;">Send Inquiry &#x2192;</button>
+              <div id="form-feedback" style="display: none; font-size: 13px; font-weight: 700; color: #15803d; padding: 10px; background: color-mix(in srgb, #15803d 12%, transparent); border: 1px solid #15803d;">
+                Thank you! Your inquiry has been received. Mr. Vĩ will contact you via Zalo/Email shortly.
+              </div>
+            </form>
           </div>
+
         </div>
+
       </div>
+
+      <!-- Footer Bar -->
       <footer style="border-top: 2px solid var(--color-divider); max-width: var(--maxw); margin: 0 auto; width: 100%;">
-        <div style="padding: 28px 0; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center;">
-          <div style="font-size: 16px; color: color-mix(in srgb,var(--color-text) 62%,transparent);">&#x00A9; <span id="yr"></span> Tuan Nguyen · Bundoora, Melbourne, Australia</div>
-          <div style="display: flex; gap: 18px; flex-wrap: wrap; font-size: 16px;">
-            <a href="https://scholar.google.com/citations?user=YuS731wAAAAJ" style="text-decoration: none;">Scholar</a>
-            <a href="https://github.com/tuannguyen8390" style="text-decoration: none;">GitHub</a>
-            <a href="https://orcid.org/0000-0003-0415-0623" style="text-decoration: none;">ORCID</a>
-            <a href="https://www.researchgate.net/profile/Tuan_Nguyen33" style="text-decoration: none;">ResearchGate</a>
-            <a href="https://twitter.com/DrKangabu" style="text-decoration: none;">Twitter</a>
-            <a href="https://www.linkedin.com/in/tuan-nguyen-38a94179/" style="text-decoration: none;">LinkedIn</a>
+        <div style="padding: 24px 0; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center;">
+          <div style="font-size: 15px; color: color-mix(in srgb,var(--color-text) 68%,transparent);">
+            &#x00A9; <span id="yr">2026</span> Ôn Thượng Vĩ (Wen Shang Weei) · All rights reserved · HCMC &amp; Binh Duong, Vietnam
+          </div>
+          <div style="display: flex; gap: 18px; flex-wrap: wrap; font-size: 15px; font-weight: 600;">
+            <a href="mailto:viot.tech@gmail.com" style="text-decoration: none;">Email</a>
+            <a href="tel:0933305065" style="text-decoration: none;">Zalo</a>
+            <a href="#resources" style="text-decoration: none;">Free Guides</a>
+            <a href="#classes" style="text-decoration: none;">Programs</a>
+            <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Publications</a>
           </div>
         </div>
       </footer>
     </section>
 
   </div><!-- #scroller -->
+
 </div></div><!-- .sc-host / #dc-root -->
 
+<!-- ==================== SCRIPTS ==================== -->
 <script>
 (function () {
   'use strict';
 
-  /* ── Footer year ── */
+  /* ── Footer Current Year ── */
   const yrEl = document.getElementById('yr');
   if (yrEl) yrEl.textContent = new Date().getFullYear();
 
-  /* ── Helix canvas animation ── */
+  /* ── Helix & Wave Canvas Animation ── */
   (function initHelix() {
     const canvas = document.getElementById('helix');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    let W, H, raf;
+    let W, H;
 
     function resize() {
       W = canvas.width  = window.innerWidth;
@@ -536,9 +801,7 @@ x-dc { display: none !important; }
     window.addEventListener('resize', resize);
 
     function helixColor() {
-      // read --helix CSS var; fallback to gold
-      const v = getComputedStyle(document.documentElement)
-        .getPropertyValue('--helix').trim();
+      const v = getComputedStyle(document.documentElement).getPropertyValue('--helix').trim();
       return v || '#ffd900';
     }
 
@@ -546,43 +809,41 @@ x-dc { display: none !important; }
     function draw() {
       ctx.clearRect(0, 0, W, H);
       const color = helixColor();
-      const amp   = H * 0.18;
-      const freq  = (2 * Math.PI) / (W * 0.38);
-      const cx    = W / 2;
+      const amp   = H * 0.16;
+      const freq  = (2 * Math.PI) / (W * 0.42);
       const cy    = H / 2;
       const steps = Math.ceil(W / 6);
-      const rungEvery = 18;
+      const rungEvery = 16;
 
-      ctx.globalAlpha = 0.22;
+      ctx.globalAlpha = 0.20;
       ctx.lineWidth = 2;
 
-      // Draw strands
+      // Double Strands
       for (let s = 0; s < 2; s++) {
         const phase = s * Math.PI;
         ctx.strokeStyle = color;
         ctx.beginPath();
         for (let i = 0; i <= steps; i++) {
           const x = (i / steps) * W;
-          const y = cy + amp * Math.sin(freq * (x - t * 1.8) + phase);
+          const y = cy + amp * Math.sin(freq * (x - t * 1.6) + phase);
           i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
         }
         ctx.stroke();
       }
 
-      // Draw rungs
-      ctx.globalAlpha = 0.12;
+      // Connecting Rungs & Node Dots
+      ctx.globalAlpha = 0.10;
       ctx.lineWidth = 1.5;
       for (let i = 0; i <= steps; i += rungEvery) {
         const x  = (i / steps) * W;
-        const y1 = cy + amp * Math.sin(freq * (x - t * 1.8));
-        const y2 = cy + amp * Math.sin(freq * (x - t * 1.8) + Math.PI);
+        const y1 = cy + amp * Math.sin(freq * (x - t * 1.6));
+        const y2 = cy + amp * Math.sin(freq * (x - t * 1.6) + Math.PI);
         ctx.strokeStyle = color;
         ctx.beginPath();
         ctx.moveTo(x, y1);
         ctx.lineTo(x, y2);
         ctx.stroke();
 
-        // dots at rung ends
         ctx.globalAlpha = 0.28;
         ctx.fillStyle = color;
         ctx.beginPath();
@@ -591,52 +852,62 @@ x-dc { display: none !important; }
         ctx.beginPath();
         ctx.arc(x, y2, 2.5, 0, Math.PI * 2);
         ctx.fill();
-        ctx.globalAlpha = 0.12;
+        ctx.globalAlpha = 0.10;
       }
 
       ctx.globalAlpha = 1;
       t += 0.35;
-      raf = requestAnimationFrame(draw);
+      requestAnimationFrame(draw);
     }
     draw();
   })();
 
-  /* ── Typewriter effect ── */
+  /* ── Typewriter Effect ── */
   (function initTypewriter() {
-    const tw     = document.getElementById('tw');
+    const tw = document.getElementById('tw');
     if (!tw) return;
-    const words  = ['all the', 'data', 'the genome', 'between the lines', 'the signal'];
+    const words = [
+      'Language Mastery',
+      'Scientific Thinking',
+      'IELTS 8.0 Skills',
+      'Academic English',
+      'Public Speaking'
+    ];
     let wi = 0, ci = 0, deleting = false, paused = false;
 
     function tick() {
       const word = words[wi];
       if (paused) {
         paused = false;
-        setTimeout(tick, 1400);
+        setTimeout(tick, 1500);
         return;
       }
       if (!deleting) {
         ci++;
         tw.textContent = word.slice(0, ci);
-        if (ci === word.length) { deleting = true; paused = true; setTimeout(tick, 80); return; }
-        setTimeout(tick, 80 + Math.random() * 40);
+        if (ci === word.length) {
+          deleting = true;
+          paused = true;
+          setTimeout(tick, 100);
+          return;
+        }
+        setTimeout(tick, 75 + Math.random() * 35);
       } else {
         ci--;
         tw.textContent = word.slice(0, ci);
         if (ci === 0) {
           deleting = false;
           wi = (wi + 1) % words.length;
-          setTimeout(tick, 320);
+          setTimeout(tick, 300);
           return;
         }
-        setTimeout(tick, 45 + Math.random() * 20);
+        setTimeout(tick, 40 + Math.random() * 20);
       }
     }
-    // Start after first word is pre-set
-    setTimeout(() => { deleting = true; paused = false; tick(); }, 1800);
+    setTimeout(() => { deleting = true; paused = false; tick(); }, 2000);
   })();
 
-  /* ── Dark mode toggle ── */
+  /* ── Dark / Light Mode Toggle ── */
   (function initDarkToggle() {
     const btn = document.getElementById('dark-toggle');
     if (!btn) return;
@@ -647,7 +918,6 @@ x-dc { display: none !important; }
       label.textContent = dark ? 'Light' : 'Dark';
     }
 
-    // Respect system preference on first load
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     applyTheme(prefersDark);
 
@@ -657,7 +927,7 @@ x-dc { display: none !important; }
     });
   })();
 
-  /* ── Dot nav scroll spy ── */
+  /* ── Dot Navigation Scroll Spy & Smooth Scroll ── */
   (function initDotNav() {
     const scroller = document.getElementById('scroller');
     const panels   = Array.from(scroller ? scroller.querySelectorAll('.panel') : []);
@@ -667,25 +937,34 @@ x-dc { display: none !important; }
     function setActive(idx) {
       dots.forEach((d, i) => {
         if (i === idx) {
-          d.style.background      = 'var(--color-accent)';
-          d.style.borderColor     = 'var(--color-accent)';
-          d.style.transform       = 'scale(1.35)';
+          d.style.background  = 'var(--color-accent)';
+          d.style.borderColor = 'var(--color-accent)';
+          d.style.transform   = 'scale(1.35)';
         } else {
-          d.style.background      = 'transparent';
-          d.style.borderColor     = 'color-mix(in srgb, var(--color-text) 40%, transparent)';
-          d.style.transform       = 'scale(1)';
+          d.style.background  = 'transparent';
+          d.style.borderColor = 'color-mix(in srgb, var(--color-text) 40%, transparent)';
+          d.style.transform   = 'scale(1)';
+        }
+      });
+
+      // Update Nav active indicator
+      const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (panels[idx] && href === '#' + panels[idx].id) {
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.removeAttribute('aria-current');
         }
       });
     }
 
-    // Click to scroll
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
         panels[i].scrollIntoView({ behavior: 'smooth' });
       });
     });
 
-    // IntersectionObserver on the scroller root
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -693,13 +972,13 @@ x-dc { display: none !important; }
           if (idx !== -1) setActive(idx);
         }
       });
-    }, { root: scroller, threshold: 0.5 });
+    }, { root: scroller, threshold: 0.45 });
 
     panels.forEach(p => io.observe(p));
     setActive(0);
   })();
 
-  /* ── Scroll reveal ── */
+  /* ── Scroll Reveal for Panels ── */
   (function initReveal() {
     const scroller = document.getElementById('scroller');
     const els = Array.from(document.querySelectorAll('[data-reveal]'));
@@ -714,42 +993,61 @@ x-dc { display: none !important; }
       });
     }, {
       root: scroller,
-      threshold: 0.12
+      threshold: 0.1
     });
 
     els.forEach(el => io.observe(el));
   })();
 
-  /* ── "Get in touch" button → scroll to #contact ── */
-  (function initContactBtn() {
-    const btn = document.getElementById('contact-btn');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-      const contact = document.getElementById('contact');
-      const scroller = document.getElementById('scroller');
-      if (contact && scroller) {
-        contact.scrollIntoView({ behavior: 'smooth' });
-      }
+  /* ── Smooth Scrolling for In-Page Anchor Links ── */
+  (function initAnchorLinks() {
+    const scroller = document.getElementById('scroller');
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').slice(1);
+        if (!targetId) return;
+        const targetEl = document.getElementById(targetId);
+        if (targetEl && scroller) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
     });
   })();
 
-  /* ── "Scroll" button → next section ── */
-  (function initScrollNext() {
-    const btn = document.getElementById('scroll-next');
-    if (!btn) return;
+  /* ── Scroll Next Buttons ── */
+  document.querySelectorAll('.scroll-next-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const scroller = document.getElementById('scroller');
-      if (scroller) {
-        const panels = Array.from(scroller.querySelectorAll('.panel'));
-        // find the first panel not fully scrolled past
-        for (let i = 0; i < panels.length; i++) {
-          const rect = panels[i].getBoundingClientRect();
-          if (rect.bottom > 10 && panels[i + 1]) {
-            panels[i + 1].scrollIntoView({ behavior: 'smooth' });
-            break;
-          }
-        }
-      }
+      const panels = Array.from(scroller.querySelectorAll('.panel'));
+      if (panels[1]) panels[1].scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  /* ── Language Switcher Interaction ── */
+  (function initLangSwitch() {
+    const spans = document.querySelectorAll('.lang-badge span[data-lang]');
+    spans.forEach(span => {
+      span.addEventListener('click', () => {
+        spans.forEach(s => s.classList.remove('active'));
+        span.classList.add('active');
+      });
+    });
+  })();
+
+  /* ── Contact Form Simulation ── */
+  (function initForm() {
+    const form = document.getElementById('inquiry-form');
+    const feedback = document.getElementById('form-feedback');
+    if (!form || !feedback) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      feedback.style.display = 'block';
+      form.reset();
+      setTimeout(() => {
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
     });
   })();
 
@@ -757,3 +1055,4 @@ x-dc { display: none !important; }
 </script>
 </body>
 </html>
+
