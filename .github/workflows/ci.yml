@@ -20,13 +20,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
-
-      - name: Install dependencies
-        run: |
-          if [ -f package-lock.json ]; then npm ci
-          else npm install
-          fi
 
       - name: Verify build
         run: node build.js
