@@ -43,20 +43,30 @@ npx wrangler deploy
 ## 📂 Project Structure
 
 ```text
-├── index.html                   # Primary landing page (Ôn Thượng Vĩ portfolio)
-├── sample_tuannguyen.html       # Direct link to Ôn Thượng Vĩ portfolio
-├── index2.html                  # Michael Pumo style portfolio replica
-├── index_original_template.html # Original Dr. Tuan Nguyen template backup
-├── public/                      # Cloudflare deployment directory (Static Assets)
-│   ├── index.html
+├── index.html                   # Primary production landing page (Ôn Thượng Vĩ portfolio)
+├── build.js                     # Asset build pipeline (syncs to public/)
+├── wrangler.jsonc               # Cloudflare Pages / Workers configuration
+├── package.json                 # Project dependencies & deployment scripts
+│
+├── archive/                     # Preserved backups and legacy templates
 │   ├── sample_tuannguyen.html
 │   ├── index2.html
-│   ├── index_original_template.html
-│   ├── _headers                 # Security & caching headers
+│   └── index_original_template.html
+│
+├── docs/                        # Project research notes and prompt specifications
+│   ├── raw_text.md
+│   └── prompt.md
+│
+├── scripts/                     # External and backend integration scripts
+│   └── google_apps_script.js    # Google Sheets webhook & email notification handler
+│
+├── public/                      # Built distribution directory for Cloudflare deployment
+│   ├── index.html
+│   ├── _headers                 # Security, CSP & caching headers
 │   └── _redirects               # Clean URL & legacy route redirects
-├── build.js                     # Syncs root HTML files to public/
-├── wrangler.jsonc               # Cloudflare Workers Static Assets configuration
-└── package.json                 # Project metadata & deployment scripts
+│
+├── template/                    # Original template zips and raw design assets
+└── .github/                     # Issue forms, PR templates, and CI/CD workflows
 ```
 
 ---

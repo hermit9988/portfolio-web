@@ -51,3 +51,4 @@ This directory documents the taxonomy and priority levels for issues and pull re
 | 4 | `rating: 💎 diamond release` | Exemplary contribution, major feature, or milestone release |
 
 > Maintained by `repo-standardizer` — keep in sync whenever labels change.
+

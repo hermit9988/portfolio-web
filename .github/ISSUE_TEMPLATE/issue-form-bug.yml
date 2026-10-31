@@ -51,3 +51,4 @@ body:
       options:
         - label: I have searched for existing issues and this is not a duplicate
           required: true
+

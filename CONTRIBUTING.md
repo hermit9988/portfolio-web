@@ -46,3 +46,4 @@ Common types: `feat`, `fix`, `docs`, `chore`, `refactor`, `style`, `ci`, `perf`.
 ## Questions?
 
 Open a discussion or open a `❓ question` issue.
+

@@ -23,3 +23,4 @@ Please include:
 ## Disclosure
 
 We appreciate responsible disclosure. Once a fix is verified and deployed, acknowledgments will be credited appropriately.
+

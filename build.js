@@ -8,16 +8,14 @@ if (!fs.existsSync(publicDir)) {
   fs.mkdirSync(publicDir, { recursive: true });
 }
 
-const filesToCopy = [
+// Primary root files
+const rootFiles = [
   'index.html',
-  'sample_tuannguyen.html',
-  'index2.html',
-  'index_original_template.html',
   '_headers',
   '_redirects'
 ];
 
-for (const file of filesToCopy) {
+for (const file of rootFiles) {
   const src = path.join(rootDir, file);
   const dest = path.join(publicDir, file);
   if (fs.existsSync(src)) {
@@ -26,5 +24,20 @@ for (const file of filesToCopy) {
   }
 }
 
-console.log('Build completed: public/ directory is ready for Cloudflare deployment.');
+// Archive / legacy pages copied to public for URL backward compatibility
+const archiveFiles = [
+  'sample_tuannguyen.html',
+  'index2.html',
+  'index_original_template.html'
+];
 
+for (const file of archiveFiles) {
+  const src = path.join(rootDir, 'archive', file);
+  const dest = path.join(publicDir, file);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, dest);
+    console.log(`Synced archive/${file} -> public/${file}`);
+  }
+}
+
+console.log('Build completed: public/ directory is ready for Cloudflare deployment.');

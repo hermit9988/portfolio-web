@@ -2,7 +2,13 @@
   "entries": [
     {
       "path": "C:\\Users\\VION\\.gemini\\antigravity\\skills"
+    },
+    {
+      "path": "C:\\Users\\VION\\.skills-manager\\skills",
+      "include_only": [
+        "dhdna-profiler",
+        "repo-standardizer"
+      ]
     }
   ]
 }
-

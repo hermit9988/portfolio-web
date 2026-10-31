@@ -718,19 +718,24 @@ x-dc { display: none !important; }
           <div style="background: var(--color-bg); padding: clamp(26px, 3.2vw, 44px);">
             <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; margin: 0 0 16px;">Quick Consultation Form</h3>
             <form id="inquiry-form" style="display: flex; flex-direction: column; gap: 14px;">
+              <!-- Honeypot anti-spam field (hidden from human visitors) -->
+              <div style="position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
+                <input type="text" name="_hp_company" id="hp-field" tabindex="-1" autocomplete="off" value="">
+              </div>
+
               <div class="field">
                 <label for="name">Full Name *</label>
-                <input type="text" id="name" class="input" placeholder="e.g., Nguyen Van A" required>
+                <input type="text" id="name" name="name" class="input" placeholder="e.g., Nguyen Van A" maxlength="100" required>
               </div>
 
               <div class="field">
                 <label for="contact-input">Email or Phone / Zalo *</label>
-                <input type="text" id="contact-input" class="input" placeholder="0933... or student@example.com" required>
+                <input type="text" id="contact-input" name="contact" class="input" placeholder="0933... or student@example.com" maxlength="150" required>
               </div>
 
               <div class="field">
                 <label for="program-select">I am interested in</label>
-                <select id="program-select" class="input">
+                <select id="program-select" name="program" class="input">
                   <option value="IELTS Preparation">IELTS Preparation (Academic 8.0 focus)</option>
                   <option value="Public Speaking & Communication">Public Speaking &amp; Academic Communication</option>
                   <option value="Academic Biology / STEM English">Academic Biology / STEM English</option>
@@ -742,12 +747,15 @@ x-dc { display: none !important; }
 
               <div class="field">
                 <label for="message">Current Level &amp; Target Goals</label>
-                <textarea id="message" class="input" placeholder="Tell me about your current band score, timeline, or specific target (e.g. Aiming for IELTS 7.5 in 4 months)..."></textarea>
+                <textarea id="message" name="message" class="input" maxlength="2000" placeholder="Tell me about your current band score, timeline, or specific target (e.g. Aiming for IELTS 7.5 in 4 months)..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="padding: 12px 20px; font-size: 15px; margin-top: 4px;">Send Inquiry &#x2192;</button>
-              <div id="form-feedback" style="display: none; font-size: 13px; font-weight: 700; color: #15803d; padding: 10px; background: color-mix(in srgb, #15803d 12%, transparent); border: 1px solid #15803d;">
+              <button type="submit" id="submit-btn" class="btn btn-primary" style="padding: 12px 20px; font-size: 15px; margin-top: 4px;">Send Inquiry &#x2192;</button>
+              <div id="form-feedback" style="display: none; font-size: 13px; font-weight: 700; color: #15803d; padding: 12px; background: color-mix(in srgb, #15803d 12%, transparent); border: 1px solid #15803d; border-radius: 4px;">
                 Thank you! Your inquiry has been received. Mr. Vĩ will contact you via Zalo/Email shortly.
+              </div>
+              <div id="form-error" style="display: none; font-size: 13px; font-weight: 600; color: #b91c1c; padding: 12px; background: color-mix(in srgb, #b91c1c 12%, transparent); border: 1px solid #b91c1c; border-radius: 4px;">
+                Something went wrong while submitting. Please contact Mr. Vĩ directly via Phone/Zalo at <a href="tel:0933305065" style="color: inherit; text-decoration: underline; font-weight: 800;">0933.305.065</a> or email <a href="mailto:viot.tech@gmail.com" style="color: inherit; text-decoration: underline; font-weight: 800;">viot.tech@gmail.com</a>.
               </div>
             </form>
           </div>
@@ -1035,19 +1043,78 @@ x-dc { display: none !important; }
     });
   })();
 
-  /* ── Contact Form Simulation ── */
+  /* ── Contact Form Submission (Google Apps Script Web App) ── */
   (function initForm() {
     const form = document.getElementById('inquiry-form');
     const feedback = document.getElementById('form-feedback');
+    const errorFeedback = document.getElementById('form-error');
+    const submitBtn = document.getElementById('submit-btn');
     if (!form || !feedback) return;
 
-    form.addEventListener('submit', (e) => {
+    // Paste your deployed Google Apps Script Web App URL below (see google_apps_script.js):
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyD7hG8IEzs2vINuaNV4z21sKq5VwQ4Tg-XbVVeJxVRITYrYFsMULkhvd485T9H1iI0GQ/exec';
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      feedback.style.display = 'block';
-      form.reset();
-      setTimeout(() => {
-        feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 100);
+
+      if (feedback) feedback.style.display = 'none';
+      if (errorFeedback) errorFeedback.style.display = 'none';
+
+      // Honeypot check: silently drop automated spam
+      const honeypot = form.querySelector('#hp-field')?.value;
+      if (honeypot) {
+        console.warn('Bot submission blocked.');
+        feedback.style.display = 'block';
+        form.reset();
+        return;
+      }
+
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Send Inquiry &#x2192;';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending inquiry...';
+      }
+
+      const payload = {
+        name: (form.querySelector('#name')?.value || '').trim().slice(0, 100),
+        contact: (form.querySelector('#contact-input')?.value || '').trim().slice(0, 150),
+        program: (form.querySelector('#program-select')?.value || '').slice(0, 100),
+        message: (form.querySelector('#message')?.value || '').trim().slice(0, 2000),
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        if (!SCRIPT_URL) {
+          console.warn('Google Apps Script URL is not set yet. Running in simulation mode.');
+          await new Promise(r => setTimeout(r, 600));
+        } else {
+          await fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload)
+          });
+        }
+
+        feedback.style.display = 'block';
+        form.reset();
+        setTimeout(() => {
+          feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      } catch (err) {
+        console.error('Submission error:', err);
+        if (errorFeedback) {
+          errorFeedback.style.display = 'block';
+          errorFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          alert('Failed to send inquiry. Please reach out via Zalo/Phone: 0933.305.065');
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }
+      }
     });
   })();
 

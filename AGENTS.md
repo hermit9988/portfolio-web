@@ -28,3 +28,4 @@ Telegraph style. Root rules only. Guidance for AI coding agents (Claude Code, Cu
 
 - Commit style: `type(scope): description` (see `CONTRIBUTING.md`).
 - Label taxonomy & rating order: see `LABELS.md`.
+

@@ -21,3 +21,4 @@ body:
       description: What have you already tried or checked?
     validations:
       required: false
+
