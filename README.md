@@ -1,5 +1,9 @@
 # Ôn Thượng Vĩ (Wen Shang Weei) — Personal Portfolio
 
+[![CI](https://github.com/hermit9988/portfolio-web/actions/workflows/ci.yml/badge.svg)](https://github.com/hermit9988/portfolio-web/actions/workflows/ci.yml)
+[![Deploy to Cloudflare Pages](https://github.com/hermit9988/portfolio-web/actions/workflows/deploy.yml/badge.svg)](https://github.com/hermit9988/portfolio-web/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Personal portfolio website for **Ôn Thượng Vĩ** — *Educator & Academic Specialist · IELTS 8.0 · Published Researcher*.
 
 ---

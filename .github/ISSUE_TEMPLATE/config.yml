@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discussions
+    url: https://github.com/hermit9988/portfolio-web/discussions
+    about: Ask questions and share ideas here
+  - name: Security
+    url: https://github.com/hermit9988/portfolio-web/security/policy
+    about: Please report security vulnerabilities here

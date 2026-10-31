@@ -12,7 +12,9 @@ const filesToCopy = [
   'index.html',
   'sample_tuannguyen.html',
   'index2.html',
-  'index_original_template.html'
+  'index_original_template.html',
+  '_headers',
+  '_redirects'
 ];
 
 for (const file of filesToCopy) {
